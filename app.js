@@ -30,4 +30,6 @@
 
 const helper = require('./helper');
 
-console.log(helper("Mugundh"));
+console.log(helper.user("Mugundh"));
+console.log(helper.id(11));
+console.log(helper.user("mugundhjb@gmail.com"));
