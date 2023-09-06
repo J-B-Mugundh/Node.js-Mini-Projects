@@ -28,8 +28,20 @@
 
 // Modules and Require in Node JS
 
-const helper = require('./helper');
+// const helper = require('./helper');
 
-console.log(helper.user("Mugundh"));
-console.log(helper.id(11));
-console.log(helper.user("mugundhjb@gmail.com"));
+// console.log(helper.user("Mugundh"));
+// console.log(helper.id(11));
+// console.log(helper.user("mugundhjb@gmail.com"));
+
+// Event emitter
+
+const events = require('events');
+
+const myEmitter = new events.EventEmitter;
+
+myEmitter.on('test', function(arg){
+    console.log(arg);
+})
+
+myEmitter.emit('test', 'hello world'); // Manually emitting this event
