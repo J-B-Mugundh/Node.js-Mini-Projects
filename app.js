@@ -13,3 +13,15 @@
 // console.log(__dirname);
 
 //console.log(__filename);
+
+// Functions in Node js
+
+function callbackFunc(func){
+    func();
+}
+
+let red = function(){
+    console.log('hi there');
+}
+
+callbackFunc(red);
