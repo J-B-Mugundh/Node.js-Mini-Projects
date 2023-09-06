@@ -16,12 +16,18 @@
 
 // Functions in Node js
 
-function callbackFunc(func){
-    func();
-}
+// function callbackFunc(func){
+//     func();
+// }
 
-let red = function(){
-    console.log('hi there');
-}
+// let red = function(){
+//     console.log('hi there');
+// }
 
-callbackFunc(red);
+// callbackFunc(red);
+
+// Modules and Require in Node JS
+
+const helper = require('./helper');
+
+console.log(helper("Mugundh"));
