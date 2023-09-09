@@ -36,12 +36,26 @@
 
 // Event emitter
 
-const events = require('events');
+// const events = require('events');
 
-const myEmitter = new events.EventEmitter;
+// const myEmitter = new events.EventEmitter;
 
-myEmitter.on('test', function(arg){
-    console.log(arg);
-})
+// myEmitter.on('test', function(arg){
+//     console.log(arg);
+// })
 
-myEmitter.emit('test', 'hello world'); // Manually emitting this event
+// myEmitter.emit('test', 'hello world'); // Manually emitting this event 
+// where 1st arg => event that we want to admit, 2nd arg => arg to be passed to the function
+
+// Server in Nodejs
+
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    console.log(req.url);
+    res.writeHead(200, {'Content-type': 'text/plain'});
+    res.end('hello world');
+});
+
+console.log('port 3000');
+server.listen(3000, '127.0.0.1');
