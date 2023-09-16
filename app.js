@@ -91,12 +91,27 @@
 
 // readStream.pipe(writeStream);
 
+// const http = require('http');
+// const fs = require('fs');
+
+// const server = http.createServer((req, res) => {
+//     res.writeHead(200, {'Content-type': 'text/plain'});
+//     const readStream = fs.createReadStream(__dirname + '/README.md', 'utf-8');
+
+//     readStream.pipe(res);
+    
+// })
+
+// server.listen(3000, '127.0.0.1');
+
+// Serving HTML page
+
 const http = require('http');
 const fs = require('fs');
 
 const server = http.createServer((req, res) => {
-    res.writeHead(200, {'Content-type': 'text/plain'});
-    const readStream = fs.createReadStream(__dirname + '/README.md', 'utf-8');
+    res.writeHead(200, {'Content-type': 'text/html'});
+    const readStream = fs.createReadStream(__dirname + '/index.html', 'utf-8');
 
     readStream.pipe(res);
     
