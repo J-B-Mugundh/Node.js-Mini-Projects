@@ -62,10 +62,22 @@
 
 // Readable stream in Nodejs
 
+// const fs = require('fs');
+
+// const readStream = fs.createReadStream(__dirname + '/README.md');
+
+// readStream.on('data', (chunk) => {
+//     console.log('data read => \n' + chunk);
+// })
+
+// Writeable Stream in Nodejs
+
 const fs = require('fs');
 
-const readStream = fs.createReadStream(__dirname + '\\README.md');
+const readStream = fs.createReadStream(__dirname + '/README.md', 'utf-8');
+const writeStream = fs.createWriteStream(__dirname + '/write-me.txt');
 
 readStream.on('data', (chunk) => {
     console.log('data read => \n' + chunk);
+    writeStream.write(chunk);
 })
