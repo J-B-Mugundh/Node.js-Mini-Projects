@@ -72,12 +72,35 @@
 
 // Writeable Stream in Nodejs
 
+// const fs = require('fs');
+
+// const readStream = fs.createReadStream(__dirname + '/README.md', 'utf-8');
+// const writeStream = fs.createWriteStream(__dirname + '/write-me.txt');
+
+// readStream.on('data', (chunk) => {
+//     console.log('data read => \n' + chunk);
+//     writeStream.write(chunk);
+// })
+
+// Pipe in Nodejs
+
+// const fs = require('fs');
+
+// const readStream = fs.createReadStream(__dirname + '/README.md', 'utf-8');
+// const writeStream = fs.createWriteStream(__dirname + '/write-me.txt');
+
+// readStream.pipe(writeStream);
+
+const http = require('http');
 const fs = require('fs');
 
-const readStream = fs.createReadStream(__dirname + '/README.md', 'utf-8');
-const writeStream = fs.createWriteStream(__dirname + '/write-me.txt');
+const server = http.createServer((req, res) => {
+    res.writeHead(200, {'Content-type': 'text/plain'});
+    const readStream = fs.createReadStream(__dirname + '/README.md', 'utf-8');
 
-readStream.on('data', (chunk) => {
-    console.log('data read => \n' + chunk);
-    writeStream.write(chunk);
+    readStream.pipe(res);
+    
 })
+
+server.listen(3000, '127.0.0.1');
+
