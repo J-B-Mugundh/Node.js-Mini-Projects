@@ -174,6 +174,10 @@ app.get('/about', (req, res) => {
 })
 
 
+app.get('/profile/:name', (req, res) => {
+    res.send("Profile name is : " + req.params.name);
+})
+
 app.listen(3000);
 
 
