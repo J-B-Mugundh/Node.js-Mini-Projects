@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css">
     <title>Document</title>
-    <style>
-        body{
-            background-color: aliceblue;
-            text-align: center;
-            font-size: 48px;
-        }
-    </style>
 </head>
 <body>
     <%- include('partials/nav.ejs') %>
     <h1>Hello, This is My about page</h1>
+    <form action="">
+        <label for="name">Name</label>
+        <input type="text" name="name" value='<%= qs.name %>'>
+        <br>
+        <label for="job">Job</label>
+        <input type="text" name="job" value='<%= qs.job %>'>
+        <br>
+        <label for="email">Email</label>
+        <input type="text" name="email" value=''>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>

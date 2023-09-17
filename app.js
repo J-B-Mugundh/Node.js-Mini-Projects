@@ -211,12 +211,15 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
+app.use('/assets', express.static('assets')); // Middleware 
 app.get('/', (req, res) => {
     res.render('index');
 })
 
 app.get('/about', (req, res) => {
-    res.render('about');
+    // query string
+    // console.log(req.query) 
+    res.render('about', {qs: req.query});
 })
 
 
@@ -226,6 +229,8 @@ app.get('/profile/:name/:id', (req, res) => {
 })
 
 app.listen(3000);
+
+
 
 
 
