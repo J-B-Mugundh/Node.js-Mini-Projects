@@ -198,7 +198,7 @@ app.get('/about', (req, res) => {
 
 
 app.get('/profile/:name/:id', (req, res) => {
-    const data = {age: 21, job: 'developer'}
+    const data = {age: 21, job: 'developer', friends: ['Iaruto', 'Itachi', 'Shikadai']}
     res.render('profile', {person: req.params.name, id: req.params.id, data : data}); // By default, it will go search in views folder
 })
 
