@@ -1,0 +1,15 @@
+{
+  "name": "nodejs",
+  "description": "NodeJS basics learnt in Full Stack Web and Mobile App Development | MERN Stack Udemy Course",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon-app": "nodemon app"
+  },
+  "author": "mugundh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies"
