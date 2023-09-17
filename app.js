@@ -182,6 +182,29 @@
 
 // Template Engines
 
+// const express = require('express');
+
+// const app = express();
+
+// app.set('view engine', 'ejs');
+
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/index.html');
+// })
+
+// app.get('/about', (req, res) => {
+//     res.sendFile(__dirname + '/about.html');
+// })
+
+
+// app.get('/profile/:name/:id', (req, res) => {
+//     const data = {age: 21, job: 'developer', friends: ['Iaruto', 'Itachi', 'Shikadai']}
+//     res.render('profile', {person: req.params.name, id: req.params.id, data : data}); // By default, it will go search in views folder
+// })
+
+// app.listen(3000);
+
+// Partial views
 const express = require('express');
 
 const app = express();
@@ -189,11 +212,11 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.render('index');
 })
 
 app.get('/about', (req, res) => {
-    res.sendFile(__dirname + '/about.html');
+    res.render('about');
 })
 
 

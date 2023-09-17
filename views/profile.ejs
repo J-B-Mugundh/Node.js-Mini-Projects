@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
         body {
             background-color: aliceblue;
@@ -17,6 +16,7 @@
     </style>
 </head>
 <body>
+    <%- include('partials/nav.ejs') %>
     <h1>Hello, This is <%= id %> - <%= person %>'s profile page</h5>
     <p>My age is <%= data.age %></p>
     <p>I am a <%= data.job %></p>
