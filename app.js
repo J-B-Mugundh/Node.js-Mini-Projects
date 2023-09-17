@@ -161,21 +161,45 @@
 
 // Express 
 
+// const express = require('express');
+
+// const app = express();
+
+// app.get('/', (req, res) => {
+//     res.send("Home page");
+// })
+
+// app.get('/about', (req, res) => {
+//     res.send("About page");
+// })
+
+
+// app.get('/profile/:name', (req, res) => {
+//     res.send("Profile name is : " + req.params.name);
+// })
+
+// app.listen(3000);
+
+// Template Engines
+
 const express = require('express');
 
 const app = express();
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-    res.send("Home page");
+    res.sendFile(__dirname + '/index.html');
 })
 
 app.get('/about', (req, res) => {
-    res.send("About page");
+    res.sendFile(__dirname + '/about.html');
 })
 
 
-app.get('/profile/:name', (req, res) => {
-    res.send("Profile name is : " + req.params.name);
+app.get('/profile/:name/:id', (req, res) => {
+    const data = {age: 21, job: 'developer'}
+    res.render('profile', {person: req.params.name, id: req.params.id, data : data}); // By default, it will go search in views folder
 })
 
 app.listen(3000);
