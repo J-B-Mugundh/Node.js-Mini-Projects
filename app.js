@@ -205,10 +205,37 @@
 // app.listen(3000);
 
 // Partial views
+// const express = require('express');
+
+// const app = express();
+
+// app.set('view engine', 'ejs');
+
+// app.use('/assets', express.static('assets')); // Middleware 
+// app.get('/', (req, res) => {
+//     res.render('index');
+// })
+
+// app.get('/about', (req, res) => {
+//     // query string
+//     // console.log(req.query) 
+//     res.render('about', {qs: req.query});
+// })
+
+
+// app.get('/profile/:name/:id', (req, res) => {
+//     const data = {age: 21, job: 'developer', friends: ['Iaruto', 'Itachi', 'Shikadai']}
+//     res.render('profile', {person: req.params.name, id: req.params.id, data : data}); // By default, it will go search in views folder
+// })
+
+// app.listen(3000);
+
+// Body parser - POST request in Nodejs
+
 const express = require('express');
-
+const bodyParser = require('body-parser');
 const app = express();
-
+const urlencodedParser = bodyParser.urlencoded({ extended: false }) // Middleware
 app.set('view engine', 'ejs');
 
 app.use('/assets', express.static('assets')); // Middleware 
@@ -220,6 +247,11 @@ app.get('/about', (req, res) => {
     // query string
     // console.log(req.query) 
     res.render('about', {qs: req.query});
+})
+
+app.post('/about', urlencodedParser, (req, res) => {
+    console.log(req.body);
+    res.render('about-success', {data: req.body});
 })
 
 
